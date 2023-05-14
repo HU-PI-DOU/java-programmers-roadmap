@@ -3,7 +3,7 @@ package org.hupidou.alg
 import java.util.*
 
 /**
- * V1版本
+ * V1版本: 基于DAG的有向无环图的任务调度和执行
  */
 data class TaskNode(
     /*该任务的父节点列表*/val parents: MutableList<TaskNode>,

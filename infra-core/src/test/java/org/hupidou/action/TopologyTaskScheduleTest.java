@@ -25,4 +25,23 @@ public class TopologyTaskScheduleTest {
         DAGScheduler scheduler = new DAGScheduler();
         scheduler.schedule(dag);
     }
+
+    @Test
+    void testSchedule2() {
+        DAG dag = new DAG();
+        // 定义5个任务
+        dag.addTask("A");
+        dag.addTask("B");
+        dag.addTask("C");
+        dag.addTask("D");
+        dag.addTask("E");
+        // 定义依赖关系
+        dag.addDependency("B", "C");
+        dag.addDependency("B", "A");
+        dag.addDependency("C", "D");
+        dag.addDependency("D", "E");
+
+        DAGScheduler scheduler = new DAGScheduler();
+        scheduler.schedule(dag);
+    }
 }
